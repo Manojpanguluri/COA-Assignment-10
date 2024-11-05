@@ -1,0 +1,15 @@
+org 100h  
+
+MOV AH, 02h           
+MOV DL, '0'          
+PRINT_0:
+    INT 21h          
+    INC DL           
+    CMP DL, '9'       
+    JA END             
+    
+    JMP PRINT_0       
+
+END:
+    MOV AH, 4Ch      
+    INT 21h
