@@ -1,0 +1,15 @@
+org 100h
+
+START:
+    MOV DL, 'Z'     
+
+PRINT_CHAR:
+    MOV AH, 02h      
+    INT 21h         
+    DEC DL           
+    CMP DL, 'A'-1    
+    JA PRINT_CHAR   
+
+EXIT:
+    MOV AH, 4Ch      
+    INT 21h
